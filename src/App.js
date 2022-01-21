@@ -1,25 +1,16 @@
-import logo from './logo.svg';
 import './App.css';
 
-function App() {
+import NavBar from "./components/NavBar";
+
+const name = "Daniel";
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Ecommerce de Jose Luis Gomez.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Pensando la aplicacion......
-        </a>
-      </header>
-    </div>
+    <>
+      <NavBar />
+      <h1>Usted acaba de ingresar al Sitio Ecommerce de Jose Luis Gomez {name}</h1>
+    </>
   );
-}
+};
 
 export default App;
