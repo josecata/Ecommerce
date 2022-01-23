@@ -9,16 +9,19 @@
     box-shadow: 0 5px 5px #636262;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     border-radius: 10px;
+    
   }
   
   ul {
     display: flex;
     justify-content: space-around;
     width: 100%;
-    
+        
   }
   
   ul li {
     list-style-type: none;
+    margin-top: 10px;
+    align-items: center;
   }
   

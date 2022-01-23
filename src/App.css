@@ -13,6 +13,19 @@
   }
 }
 
+h1 {
+
+  padding-top: 1em;
+  color:black;
+  text-align: center;
+  font-weight: bold;
+  font-style: italic;
+  text-shadow: cornsilk;
+  box-shadow: 0 5px 5px #636262;
+  
+  
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -24,8 +37,14 @@
   color: white;
 }
 
+
 .App-link {
   color: #61dafb;
+}
+
+.articulos {
+  display: flex;
+  justify-content: space-evenly;
 }
 
 @keyframes App-logo-spin {

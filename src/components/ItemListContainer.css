@@ -1,0 +1,19 @@
+.contenedor {
+    width: 400px;
+    margin: 40px;
+}
+
+.pelota {
+    width: 100px;
+    margin-left: 120px;
+}
+
+.mb-2 {
+    padding: 20px;
+    text-shadow: black;
+    text-decoration: chartreuse;
+    font-weight:bold;
+}
+.subtitulo {
+    text-align: center;
+}
