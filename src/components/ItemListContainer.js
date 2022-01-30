@@ -1,7 +1,9 @@
-import React from "react";
+import React  from "react";
 import {Card, CardBody, CardTitle,CardSubtitle,CardText} from 'reactstrap';
 
 import './ItemListContainer.css'
+import './ItemCount'
+
 
 const ItemListContainer = ({producto,precio, descripcion,img}) => (
 <div className="contenedor">
@@ -17,10 +19,21 @@ const ItemListContainer = ({producto,precio, descripcion,img}) => (
       </CardSubtitle>
       <CardText>
         {descripcion}
+        <p>Stock 4 Unidades</p>
       </CardText>
     </CardBody>
+    
   </Card>
+  
 </div>
+
+
+
+
 );
+
+
+
+
 
 export default ItemListContainer;
