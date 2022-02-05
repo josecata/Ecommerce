@@ -1,0 +1,7 @@
+.itemList-prod{
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    justify-content: space-around;    
+}
