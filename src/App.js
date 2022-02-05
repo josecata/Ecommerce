@@ -2,8 +2,8 @@ import React  from 'react';
 
 import './App.css';
 import ItemCount from './components/ItemCount';
-import ItemListContainer from './components/ItemListContainer';
-import NavBar from "./components/NavBar";
+import ItemListContainer from './components/ItemLisContainer/ItemListContainer';
+import NavBar from './components/Navbar/NavBar';
 
 const App = () => {
     return (

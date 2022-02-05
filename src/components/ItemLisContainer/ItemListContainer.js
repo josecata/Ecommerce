@@ -1,8 +1,8 @@
 import React  from "react";
 import {Card, CardBody, CardTitle,CardSubtitle,CardText} from 'reactstrap';
 
+import '../ItemCount'
 import './ItemListContainer.css'
-import './ItemCount'
 
 
 const ItemListContainer = ({producto,precio, descripcion,img}) => (
