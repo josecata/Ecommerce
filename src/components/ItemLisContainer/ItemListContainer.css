@@ -1,27 +1,27 @@
 .ilc-prod{
 
     display: flex;
-    align-items:initial;
+    align-items:center;
     justify-content: center;
     flex-flow: column;
-    background-color:darkslategrey;
+    background-color:white;
     
     padding: 3em;
 }
 .ilc-prod p {
-    color:white;
+    color:black;
     font-size: 1rem;
     
 }
 
 .greet{
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 3rem;
-    width: 40%;
+    font-size: 2rem;
+    width: 30%;
     text-align: center;
     color: black;
     padding-top: 1em;
-    margin-left: 7em;
+    margin-left: 1em;
 }
 .btn button{
     cursor: pointer;

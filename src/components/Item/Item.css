@@ -7,7 +7,7 @@
 
 }
 .item-prod img{
-    width: 100px;
+    width: 1000px;
     height: 100px;
     border-radius: 10px;
 }
@@ -16,3 +16,5 @@
     font-weight: bold;
     text-align:initial;
 }
+
+

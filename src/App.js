@@ -3,13 +3,14 @@ import React  from 'react';
 import './App.css';
 import ItemListContainer from './components/ItemLisContainer/ItemListContainer';
 import NavBar from './components/Navbar/NavBar';
+import Header from './components/Header/Header';
 
 const App = () => {
     return (
     <>
-      <NavBar />
-      <h1>La tienda online #1 de basquet en Argentina</h1>
-      <ItemListContainer greeting= "Elija su producto"></ItemListContainer>        
+      
+      <Header/>
+      <ItemListContainer greeting= "Productos 100% originales"></ItemListContainer>        
     </>
   );
 };

@@ -6,8 +6,8 @@ const NavBar = () => {
 
   <div>
     <nav className="Navigation">
+       <CarWidget />
       <ul>
-        <li> <CarWidget /> </li>
         <li>Usuario</li>
         <li>Productos</li>
         <li>Quienes Somos</li>
