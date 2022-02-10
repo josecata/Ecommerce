@@ -1,7 +1,8 @@
 import React, { useState ,useEffect} from 'react';
 import ItemList from '../ItemList/ItemList.js';
 import catalogo from '../../Api/api';
-import './ItemListContainer.css'
+import './ItemListContainer.css';
+import Item from '../Item/Item';
 
 
 const ItemListContainer = ({greeting}) => {
@@ -27,11 +28,23 @@ const ItemListContainer = ({greeting}) => {
  },[]);
  
  function handleAddCounter () {
-     setCounter(counter+1)
- }
+     if (counter < "4" ) {
+         setCounter(counter+1);
+         alert("Producto Agregado");
+     }
+     else
+     alert("No hay  Producto en Stock");
+    };
+
+
  function handleRemoveCounter () {
-     setCounter(counter-1)
- }
+     if (counter =="0") {
+         alert ("Error - No puede Quitar Prodcutos sin haberlos agregado");
+     }
+     else
+     setCounter(counter-1);
+
+ };
    return (
    <div className='ilc-prod'>
        <p className='contador'>{counter}</p>

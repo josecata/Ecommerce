@@ -6,6 +6,7 @@ import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
 import './Item.css';
 
+
  const Item = ({producto}) => {
   return (
     <Card sx={{ maxWidth: 345 }} style={{margin:60}}>
