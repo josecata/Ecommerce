@@ -1,11 +1,15 @@
 import React from 'react';
+import './Header.css';
 
 
 const Header = () => {
-  return <div>
-      
-      <h1>La tienda online #1 de basquet en Argentina</h1>
-  </div>;
+  return (
+    <div className='Header'>
+      <h1>Rick y Morty</h1>
+    </div>
+
+  );
+    
 };
 
 export default Header;

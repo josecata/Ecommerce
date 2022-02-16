@@ -7,46 +7,34 @@ import { CardActionArea } from '@mui/material';
 import './Item.css';
 
 
- const Item = ({producto}) => {
+
+
+const Item = ({user}) => {
   return (
-    <Card sx={{ maxWidth: 345 }} style={{margin:60}}>
+    <Card sx={{ maxWidth: 150 }} style={{margin:60}}>
       <CardActionArea>
         <CardMedia 
         component="img" 
         with='20'
-        image={producto.img} 
-        alt={producto.title} />
+        image={user.image} 
+        alt={user.name} />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
-          {producto.title}
+          {user.name}
           </Typography>
           <Typography variant="body2" color="text.secondary">
-          {producto.descripcion}
+          {user.status}
           </Typography>
           <Typography variant="body2" color="text.secondary">
-          {producto.precio}
+          {user.origen}
           </Typography>
+         
         </CardContent>
       </CardActionArea>
     </Card>
   );
-}
 
+};
+  
 export default Item;
 
-/*import React from 'react';
-import './Item.css';
-
-const Item = ({producto}) => {
-  return (
-  <div className='item-prod'>
-    <img src={producto.img} alt={producto.title} />
-    <p>{producto.title}</p>
-    <p>{producto.precio}</p>
-    <p>{producto.descripcion}</p>
-    
-  </div>
-  )
-};
-
-export default Item;*/

@@ -1,40 +1,60 @@
 import React, { useState ,useEffect} from 'react';
-import ItemList from '../ItemList/ItemList.js';
-import catalogo from '../../Api/api';
 import './ItemListContainer.css';
-import Item from '../Item/Item';
+import axios from 'axios';
+import Item from '../Item/Item.js';
+
+import { Link } from 'react-router-dom';
+import Spinner from '../Spinner/Spinner';
+
 
 
 const ItemListContainer = ({greeting}) => {
 
-  const [productos, setProductos] = useState([]);
+
  const [counter, setCounter] = useState(0);
+ const [users, setUsers] = useState([]);
+ const [isLoading, setIsLoading] = useState(true);
   
  
  useEffect(() => {
-      const promiseProductos = new Promise((resolve,reject)=>{
-         setTimeout(()=>{
-             resolve(catalogo)
-         },2000)
-     })
-     promiseProductos
-     .then((res)=> {setProductos(res);
-     })
-     .catch((error)=>{
-         console.log(error)
-     })
-     console.log(productos);
     
- },[]);
+    axios('https://rickandmortyapi.com/api/character').then((res) => setUsers(res.data.results));
+    setTimeout(()=> {
+        setIsLoading(false);
+    },2000);
+},[]);
  
- function handleAddCounter () {
+return (
+    <>
+        {isLoading ? (
+            <Spinner/>
+        ) : (
+            <div className='itemList-prod'>
+                 {users.map((user)=>{
+                     return (
+
+                         <div key={user.id}>
+                            <Link to={`/detail/${user.id}`} className='Link'>
+                                <Item  user={user}/>
+                            </Link>
+                        </div>
+                    );  
+        
+                  })}
+             </div>
+        )}
+    </>
+);
+
+
+function handleAddCounter () {{
      if (counter < "4" ) {
          setCounter(counter+1);
          alert("Producto Agregado");
      }
      else
      alert("No hay  Producto en Stock");
-    };
+};
 
 
  function handleRemoveCounter () {
@@ -45,18 +65,20 @@ const ItemListContainer = ({greeting}) => {
      setCounter(counter-1);
 
  };
-   return (
-   <div className='ilc-prod'>
+   
+ 
+ return (
+    <div className='ilc-prod'>
        <p className='contador'>{counter}</p>
        <div className='btn'>
        <button onClick={handleAddCounter}> Agregar al Carrito</button>
        <button onClick={handleRemoveCounter}> Remover del Carrito</button>
        </div>
        <h2 className='greet'>{greeting}</h2>
-       <ItemList productos={productos}></ItemList>
+       
            
    </div>
-   )
+   )}
  };
  
  export default ItemListContainer;

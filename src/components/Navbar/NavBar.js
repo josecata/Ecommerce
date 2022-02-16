@@ -8,12 +8,13 @@ const NavBar = () => {
     <nav className="Navigation">
        <CarWidget />
       <ul className='List-ul'>
-        <Link to="/" className="Link" >Usuario</Link>
-        <Link to="Productos" className="Link">Productos</Link>
-        <Link to="Servicios" className="Link">Servicios</Link>
-        <Link to="Contactos" className="Link">Contactos</Link>
+        <Link to='/' className="Link">Inicio</Link>
+        <Link to='/Capitulos' className="Link">Capitulos</Link>
+        <Link to='/Personajes' className="Link">Personajes</Link>
+        <Link to='/Contacto' className="Link">Contacto</Link>
       </ul>
     </nav>
+    
   </div>
   );
     
