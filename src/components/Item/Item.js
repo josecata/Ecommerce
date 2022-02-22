@@ -9,24 +9,24 @@ import './Item.css';
 
 
 
-const Item = ({user}) => {
+const Item = ({data}) => {
   return (
     <Card sx={{ maxWidth: 150 }} style={{margin:60}}>
       <CardActionArea>
         <CardMedia 
         component="img" 
         with='20'
-        image={user.image} 
-        alt={user.name} />
+        image={data.image} 
+        alt='nombre' />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
-          {user.name}
+          {data.name}
           </Typography>
           <Typography variant="body2" color="text.secondary">
-          {user.status}
+          {data.species}
           </Typography>
           <Typography variant="body2" color="text.secondary">
-          {user.origen}
+          {data.house}
           </Typography>
          
         </CardContent>

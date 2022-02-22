@@ -1,37 +1,59 @@
-import React, { useState }  from 'react';
+import React from 'react';
+import { useNavigate } from 'react-router';
+import { useState } from 'react';
 
-const ItemCount = () => {
-
-    const [counter, setCounter] = React.useState(0);
-  
-const handlerCounterUp = () => {
-  if (counter <"4") {
-    setCounter(counter + 1);
-    alert("Producto Agregado");
-  }
-  else
-    alert("No hay producto en Stock");
-  
-};
-
-const handlerCounterDown = () => {
-if (counter =="0") {
-    alert ("Error - No puede quitar productos sin haberlos agregado");
-}
-  else
-    setCounter(counter - 1);
-};
+import './ItemCount.css';
 
 
+const ItemCount = ({ initial, stock, onAdd }) => {
+ 
+  const [value, setValue] = useState(initial);
+  const [showButton, setshowButton] = useState(false);
 
-return (
-    <div className='stock'>
-        <p style={{marginLeft:220}} >{counter} </p>
-        <button onClick={handlerCounterUp} style={{marginLeft:80}} >Agregar al Carrito</button>
-        <button onClick={handlerCounterDown} style={{marginLeft:10}} >Quitar del Carrito</button>
+  const navigate = useNavigate();
+
+  const addProduct = (num) => {
+    setValue(value + num);
+  };
+
+  return (
+    <div className="count-container">
+      <div className="count-container__contador">
+        <button
+          className="count-container__button"
+          onClick={() => addProduct(-1)}
+          disabled={value === initial ? true : null}
+        >
+          -
+        </button>
+        <span className="count-container__value">{value}</span>
+        <button
+          className="count-container__button"
+          onClick={() => addProduct(+1)}
+          disabled={value === stock ? true : null}
+        >
+          +
+        </button>
+      </div>
+
+      <button
+        className="button-primary"
+        onClick={() => {onAdd(value); setshowButton(true)}}
+        disabled={stock === 0 ? true : null}
+      >
+        Añadir
+      </button>
+      { (showButton && navigate('/Categoria/:CategoriaId',{location:true} ) && <button
+        onClick={()=>{navigate.push('/categoria/:CategoriaId')}}
+        className="button-primary button-finalizar-compra"
+      >
+        Finalizar compra
+      </button>)}
     </div>
-)
-
-}
+  );
+};
 
 export default ItemCount;
+
+
+

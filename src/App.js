@@ -16,24 +16,26 @@ import Capitulos from './views/Capitulos/Capitulos';
 import Personajes from './views/Personajes/Personajes';
 import Contacto from './views/Contacto/Contacto';
 import ItemDetail from './views/ItemDetail/ItemDetail';
+import Categoria from './views/Categoria/Categoria';
 
 const App = () => {
-    return (
+  return (
     <Router>
-    <div className='App'>
-      <Header/>
-      <NavBar/>
-      <Routes>
-        <Route path='/' element={<Inicio />} />
-        <Route path='/Capitulos' element={<Capitulos />} />
-        <Route path='/Personajes' element={<Personajes />} />
-        <Route path='/Contacto' element={<Contacto />} />
-        <Route path='/detail/:id' element={<ItemDetail />} />
+     <div className='App'>
+        <Header/>
+        <NavBar/>
+        <Routes>
+          <Route path='/' element={<Inicio />} />
+          <Route path='/Capitulos' element={<Capitulos />} />
+          <Route path='/Personajes' element={<Personajes />} />
+          <Route path='/Contacto' element={<Contacto />} />
+          <Route path='/detail/:id' element={<ItemDetail />} />
+          <Route path='/Categoria/:CategoriaId' element={<Categoria />} />
 
-      </Routes>
+        </Routes>
     </div>
 
-  </Router>
+    </Router>
    
   );
 };
