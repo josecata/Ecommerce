@@ -9,24 +9,24 @@ import './Item.css';
 
 
 
-const Item = ({data}) => {
+const Item = ({cantProductos}) => {
   return (
     <Card sx={{ maxWidth: 150 }} style={{margin:60}}>
       <CardActionArea>
         <CardMedia 
         component="img" 
         with='20'
-        image={data.image} 
+        image={cantProductos.img} 
         alt='nombre' />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
-          {data.name}
+          {cantProductos.titulo}
           </Typography>
           <Typography variant="body2" color="text.secondary">
-          {data.species}
+          {cantProductos.jugador}
           </Typography>
           <Typography variant="body2" color="text.secondary">
-          {data.house}
+          {cantProductos.precio}
           </Typography>
          
         </CardContent>
